@@ -3,6 +3,7 @@ import styled from 'styled-components'
 import BookList from './components/booklist';
 import ApolloClient from 'apollo-boost';
 import { ApolloProvider } from '@apollo/react-hooks'
+import AddBookComponent from './components/addBook';
 
 export const client = new ApolloClient({
   uri: 'http://localhost:4000/graphql'
@@ -19,8 +20,9 @@ function App() {
       <Main>
         <Title>
           Graphql Clients Apollo Tutorial
-        <BookList />
         </Title>
+        <BookList />
+        <AddBookComponent />
       </Main>
     </ApolloProvider>
   );

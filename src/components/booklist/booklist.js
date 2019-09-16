@@ -7,7 +7,7 @@ const Container = styled.div`
     display:flex;
 `
 
-const getBooksQuery = gql`
+export const getBooksQuery = gql`
 {
     books {
       name
@@ -20,7 +20,6 @@ const getBooksQuery = gql`
 class BookList extends Component {
 
     render() {
-        console.log(this.props)
         const { books, loading, error } = this.props.data;
         return <Container>
             {loading ? 'loading...' : books.map(book => <BookComponent key={book.id} bookName={book.name} />)}
